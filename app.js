@@ -1,4 +1,4 @@
-var config = require('config/config.json')
+var config = require('./config/config.json')
 var http = require('http')
 
 var server = http.createServer(function (request, response) {
