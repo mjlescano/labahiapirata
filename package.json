@@ -4,6 +4,7 @@
   "description": "The Pirate Bay Proxy",
   "main": "app.js",
   "scripts": {
+    "start": "pm2 start app.js --name lbp --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
