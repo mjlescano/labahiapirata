@@ -1,3 +1,4 @@
+var config = require('config/config.json')
 var http = require('http')
 
 var server = http.createServer(function (request, response) {
@@ -5,6 +6,6 @@ var server = http.createServer(function (request, response) {
   response.end('Hola!! :D\n')
 })
 
-server.listen(8080)
+server.listen(config.port)
 
-console.log("Server running at http://127.0.0.1:80/")
+console.log('Server running at http://127.0.0.1:80/')
