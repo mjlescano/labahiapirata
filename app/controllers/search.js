@@ -1,10 +1,11 @@
-var tpb = require('thepiratebay')
+var tortuga = require('tortuga');
 
 exports.index = function(req, res) {
-  tpb.search(req.query.query)
-  .then(function(results){
-    console.log(results)
-
+  tortuga.search({
+    query: req.query.query,
+    sortType: 7,
+  }, function(results) {
+    return res.json(results)
     res.render('search/index', {
       results: results
     })

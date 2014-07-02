@@ -1,4 +1,5 @@
-var config = require('./config/config')
+var dotenv = require('dotenv')
+dotenv.load()
 
 var express = require('express')
 var path = require('path')
@@ -17,4 +18,4 @@ var controllers = require(path.join(__dirname, 'lib', 'controllers'))
 app.get('/', controllers.home.index)
 app.get('/search', controllers.search.index)
 
-var server = app.listen(config.port)
+var server = app.listen(process.env.PORT)
