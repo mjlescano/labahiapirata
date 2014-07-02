@@ -1,12 +1,14 @@
 var tortuga = require('tortuga');
 
 exports.index = function(req, res) {
+  var query = req.query.query
   tortuga.search({
-    query: req.query.query,
+    query: query,
     sortType: 7,
   }, function(results) {
     res.render('search/index', {
-      results: results
+      results: results,
+      query: query
     })
   })
 }

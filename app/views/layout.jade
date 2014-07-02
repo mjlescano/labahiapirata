@@ -5,7 +5,7 @@ html
   body
     header
       form(action='/search')
-        input(type='search', name='query', autofocus=true, required=true)
+        input(type='search', name='query', value=locals.query, autofocus=true, required=true)
         button(type='submit') Buscar
     block content
     script.
