@@ -2,10 +2,11 @@ doctype html
 html
   head
     title La Bahía Pirata | The Pirate Bay Proxy
+    //- meta(name='viewport', content='width=device-width, user-scalable=no')
   body
     header
       form(action='/search')
-        input(type='search', name='query', value=locals.query, autofocus=true, required=true)
+        input(type='search', name='query', value=locals.query, autofocus=true)
         button(type='submit') Buscar
     block content
     if process.env.LOAD_ANALYTICS === 'true'
