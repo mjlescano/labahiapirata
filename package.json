@@ -4,7 +4,7 @@
   "description": "The Pirate Bay Proxy",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start app.js --name lbp --watch",
+    "start": "pm2 start app.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,5 +12,15 @@
     "url": "git@bitbucket.org:mjlescano/labahiapirata.git"
   },
   "author": "mjlescano",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "cookie-parser": "^1.0.1",
+    "debug": "^0.7.4",
+    "express": "^4.4.5",
+    "jade": "~1.3.0",
+    "morgan": "^1.0.1",
+    "static-favicon": "^1.0.2",
+    "stylus": "^0.42.3"
+  }
 }
