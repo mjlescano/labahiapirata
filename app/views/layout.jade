@@ -3,4 +3,8 @@ html
   head
     title La Bahía Pirata | The Pirate Bay Proxy
   body
+    header
+      form(action='/search')
+        input(type='search', name='query', autofocus=true, required=true)
+        button(type='submit') Buscar
     block content

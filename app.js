@@ -9,7 +9,9 @@ var app = express()
 // view engine setup
 app.set('views', path.join(__dirname, 'app', 'views'))
 app.set('view engine', 'jade')
+app.set('trust proxy', true)
 
+app.use(require(path.join(__dirname, 'lib', 'remove-www')))
 app.use(require('stylus').middleware(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'public')))
 

@@ -1,4 +1,21 @@
 extends ../layout
 
 block content
-  h1= results
+  if results.length
+    table
+      thead
+        td Link
+        td Título
+        td Categoría
+        td Seeders
+        td Leechers
+      each torrent in results
+        tr
+          td
+            a(href=torrent.magnet, title='Descargar') Link
+          td= torrent.title
+          td= torrent.category
+          td= torrent.seeders
+          td= torrent.leechers
+  else
+    h1 nada :(
