@@ -3,10 +3,7 @@ var tortuga = require('tortuga')
 exports.index = function(req, res) {
   var query = req.query.query
 
-  if( !query ) {
-    res.redirect('/')
-    return
-  }
+  if( !query ) return res.redirect('/')
 
   tortuga.search({
     query: query,

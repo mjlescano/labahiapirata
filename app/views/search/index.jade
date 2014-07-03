@@ -1,5 +1,6 @@
 extends ../layout
-
+block vars
+  - title = locals.query || 'Resultados de Búsqueda'
 block content
   if results.length
     table

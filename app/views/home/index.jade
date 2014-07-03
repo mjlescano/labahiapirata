@@ -1,3 +1,16 @@
 extends ../layout
-
+block vars
+  - title = 'The Pirate Bay Proxy'
+  - description = 'La Bahía Pirata es un sitio que sirve de proxy para descargar contenido de ThePirateBay.se. Encuentra exactamente el mismo contenido que en The Pirate Bay.'
+block meta
+  +seoTags({
+    url: 'http://labahiapirata.com',
+    title: title,
+    description: description,
+    // image: 'http://blog.hozzamedia.com/wp-content/uploads/2011/03/The_Pirate_Bay_Wallpaper_by_herbman75.jpg',
+    // ogAuthor: 'labahiapirata',
+    // ogPublisher: 'labahiapirata',
+    // twitterSite: 'labahiapirata',
+    // twitterCreator: 'labahiapirata',
+  })
 block content

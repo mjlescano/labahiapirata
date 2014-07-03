@@ -1,0 +1,35 @@
+//-
+  +seoTags({
+    url: 'http://labahiapirata.com',
+    title: 'The Pirate Bay Proxy',
+    description: 'La Bahía Pirata es un sitio...',
+    image: 'http://blog.hozzamedia.com/wp-content/uploads/2011/03/The_Pirate_Bay_Wallpaper_by_herbman75.jpg',
+    ogSiteName: 'La Bahía Pirata',
+    ogAuthor: 'labahiapirata',
+    ogPublisher: 'labahiapirata',
+    twitterSite: 'labahiapirata',
+    twitterCreator: 'labahiapirata',
+  })
+mixin seoTags(attrs)
+  if attrs.url
+    link(rel='canonical', href=attrs.url)
+    meta(property='og:url', content=attrs.url)
+  meta(property='og:type', content=(attrs.ogType || 'website'))
+  meta(name='twitter:card', content=(attrs.twitterCard || 'summary'))
+  meta(property='og:locale', content='es_ES')
+  meta(property='og:site_name', content=(attrs.ogSiteName || 'La Bahía Pirata'))
+  if attrs.title
+    meta(property='og:title', content=attrs.title)
+  if attrs.description
+    meta(name='description', content=attrs.description)
+    meta(property='og:description', content=attrs.description)
+  if attrs.image
+    meta(property='og:image', content=attrs.image)
+  if attrs.ogAuthor
+    meta(property='article:author', content=attrs.ogAuthor)
+  if attrs.ogPublisher
+    meta(property='article:publisher', content=attrs.ogPublisher)
+  if attrs.twitterSite
+    meta(name='twitter:site', content='@'+attrs.twitterSite)
+  if attrs.twitterCreator
+    meta(name='twitter:creator', content='@'+attrs.twitterCreator)
