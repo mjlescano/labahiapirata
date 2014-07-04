@@ -1,5 +1,8 @@
 La Bahía Pirata
 ===============
 
-* SSH:
+* SSH
 ** ssh lbp@labahiapirata.com
+
+* NGINX
+** sudo service nginx restart

@@ -11,9 +11,11 @@ app.set('views', path.join(__dirname, 'app', 'views'))
 app.set('view engine', 'jade')
 app.set('trust proxy', true)
 
-app.use(require(path.join(__dirname, 'lib', 'remove-www')))
 app.use(require('stylus').middleware(path.join(__dirname, 'public')))
-app.use(express.static(path.join(__dirname, 'public')))
+
+if( process.env.NOVE_ENV === 'development' ) {
+  app.use(express.static(path.join(__dirname, 'public')))
+}
 
 var controllers = require(path.join(__dirname, 'lib', 'controllers'))
 
