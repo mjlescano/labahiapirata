@@ -1,6 +1,0 @@
-[{
-  "name": "lbp",
-  "script": "./app.js",
-  "watch": ["app", "lib"],
-  "ignoreWatch" : ["node_modules"]
-}]
