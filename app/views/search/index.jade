@@ -3,18 +3,20 @@ block vars
   - title = locals.query || 'Resultados de Búsqueda'
 block content
   if results.length
-    table
+    table.results-table
       thead
-        td Link
-        td Título
-        td Seeders
-        td Leechers
-      each torrent in results
         tr
-          td
-            a(href=torrent.magnet, title='Descargar') Link
-          td= torrent.title
-          td= torrent.seeders
-          td= torrent.leechers
+          th
+          th Título
+          th Seeders
+          th Leechers
+      tbody
+        each torrent in results
+          tr
+            td
+              a(href=torrent.magnet, title='Descargar') Link
+            td.title= torrent.title
+            td= torrent.seeders
+            td= torrent.leechers
   else
     h1 nada encontrado :(

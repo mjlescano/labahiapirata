@@ -1,6 +1,6 @@
 block vars
 doctype html
-html.guides2(lang='es', prefix='og: http://ogp.me/ns#')
+html(lang='es', prefix='og: http://ogp.me/ns#')
   head
     title #{title ? title + ' | ' : ''}La Bahía Pirata
     include partials/seo-tags
@@ -19,5 +19,4 @@ html.guides2(lang='es', prefix='og: http://ogp.me/ns#')
     block content
     block bottom
     link(rel='stylesheet', type='text/css', href='/css/app.css')
-    //- script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     include partials/google-analytics
