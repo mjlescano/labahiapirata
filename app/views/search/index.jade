@@ -7,7 +7,6 @@ block content
       thead
         td Link
         td Título
-        td Categoría
         td Seeders
         td Leechers
       each torrent in results
@@ -15,7 +14,6 @@ block content
           td
             a(href=torrent.magnet, title='Descargar') Link
           td= torrent.title
-          td= torrent.category
           td= torrent.seeders
           td= torrent.leechers
   else

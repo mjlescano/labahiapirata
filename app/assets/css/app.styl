@@ -1,0 +1,106 @@
+@import 'lib/dev-tools'
+@import url('http://fonts.googleapis.com/css?family=Josefin+Sans:100,400,700')
+
+global-reset()
+
+beige = #F0EFED
+marron = #89766C
+marronClaro = lighten(marron, 80%)
+negro = #444444
+rojo = #972D15
+
+::selection
+  background: rojo
+::-moz-selection
+  background: rojo
+
+*
+  box-sizing: border-box
+
+body, html
+  size: 100%
+
+html.guides
+  &::before
+    dev-tools-guide-h()
+  &::after
+    dev-tools-guide-v()
+  body
+    &::before
+      dev-tools-guide-v()
+      left: 38.2%
+      background-color: darken(cyan, 50%)
+
+body
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif
+  background-color: beige
+
+input:focus, textarea:focus
+  outline 0
+  -moz-outline-style none
+
+::-webkit-input-placeholder
+  color marron
+:-moz-placeholder
+  color marron
+
+::-webkit-input-placeholder
+  text-indent: 0
+:-moz-placeholder
+  text-indent: 0
+::-moz-placeholder
+  text-indent: 0
+:-ms-input-placeholder
+  text-indent: 0
+
+.input-wrapper
+  position: relative
+  font-size: 1em
+  &:before
+    content: ''
+    absolute: left 0 top .9em
+    size: 100% 1px
+    background-color: marronClaro
+    z-index: -1
+  input
+    reset-box-model()
+    width: 100%;
+    border: none
+    font-family: inherit
+    font-size: inherit
+    background-color: transparent
+    &:disabled
+      color marron
+    &:-webkit-autofill
+      background-color: transparent
+
+header
+  position: relative
+  padding: 10px 12px
+  font-size: 25px
+  h1
+    position: relative
+    margin: 0 0 0.2em
+    user-select: none
+    cursor: default
+    &:hover
+      span.t
+        opacity: 0
+        transition: opacity .3s ease-in-out
+      span.th
+        opacity: 1
+        transition: opacity .3s ease-in-out .15s
+    span.t
+      transition: opacity .3s ease-in-out .15s
+    span.h
+      absolute: left 0 top 0
+      opacity: 0
+      transition: opacity .3s ease-in-out
+  .input-wrapper
+    width: 320px;
+    max-width: 100%;
+    font-size: .72em
+  button
+    display: none
+
+@require 'views/**/*'

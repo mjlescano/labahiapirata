@@ -1,17 +1,23 @@
 block vars
 doctype html
-html(lang='es', prefix='og: http://ogp.me/ns#')
+html.guides2(lang='es', prefix='og: http://ogp.me/ns#')
   head
     title #{title ? title + ' | ' : ''}La Bahía Pirata
-    //- meta(name='viewport', content='width=device-width, user-scalable=no')
     include partials/seo-tags
     block meta
-  body
+  body(class=(locals.bodyClass || ''))
     header
-      h1 La Bahía Pirata
-      form(action='/search')
-        input(type='search', name='query', value=locals.query, title='Búsqueda Pirata', placeholder='Búsqueda Pirata', autofocus=true)
+      label(for='search-query')
+        h1
+          span.t La Bahía Pirata
+          span.h |
+          span.h.th The Pirate Bay Proxy
+      form(action='/search', onsubmit='if( !this.elements.query.value ) { location = \'/\'; return false }')
+        .input-wrapper
+          input(id='search-query', type='text', name='query', value=locals.query, title='Búsqueda Pirata', autofocus=true)
         button(type='submit') Buscar
     block content
     block bottom
+    link(rel='stylesheet', type='text/css', href='/css/app.css')
+    //- script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     include partials/google-analytics
