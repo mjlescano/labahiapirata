@@ -260,3 +260,8 @@ header button {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
+.results-table .size {
+  color: #89766c;
+  font-size: 0.8em;
+  font-weight: bold;
+}

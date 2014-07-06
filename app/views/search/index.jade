@@ -8,6 +8,7 @@ block content
         tr
           th
           th Título
+          th
           th Seeders
           th Leechers
       tbody
@@ -16,6 +17,7 @@ block content
             td
               a(href=torrent.magnet, title='Descargar') Link
             td.title= torrent.title
+            td.size= (torrent.size || '')
             td= torrent.seeders
             td= torrent.leechers
   else
