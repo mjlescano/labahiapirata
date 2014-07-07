@@ -4,8 +4,8 @@ dotenv.load()
 var onDevelopment = !!(process.env.NODE_ENV === 'development')
 var onProduction = !!(process.env.NODE_ENV === 'production')
 
-var express = require('express')
 var path = require('path')
+var express = require('express')
 
 var app = express()
 
@@ -13,7 +13,11 @@ app.set('views', path.join(__dirname, 'app', 'views'))
 app.set('view engine', 'jade')
 app.set('trust proxy', true)
 
-if( onDevelopment ) {
+if( onProduction ){
+  app.use(require('compression'))
+}
+
+if( onDevelopment ){
   var assets = require(path.join(__dirname, 'lib', 'assets'))
   app.use(assets.css)
   app.use(express.static(path.join(__dirname, 'public')))

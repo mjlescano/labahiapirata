@@ -13,10 +13,19 @@
     tr
       &:hover
         background-color: marronClaro
-  .title
-    overflow: ellipsis
   .size
     color: marron
     font-size: .8em
     font-weight: bold
     text-align: right
+
+  @media (max-width: 767px)
+    width: 100%
+    overflow: hidden
+    thead
+      position: absolute
+      right: 100%
+    td
+      display: block
+      word-break: break-all
+

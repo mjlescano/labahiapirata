@@ -32,7 +32,7 @@ body, html
 //       background-color: darken(cyan, 50%)
 
 body
-  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif
+  font-family: 'Josefin Sans', serif
   background-color: beige
 
 input:focus, textarea:focus
@@ -58,7 +58,7 @@ input:focus, textarea:focus
   font-size: 1em
   &:before
     content: ''
-    absolute: left 0 top .9em
+    absolute: left 0 top .85em
     size: 100% 1px
     background-color: marronClaro
     z-index: -1
@@ -86,16 +86,18 @@ header
     &:hover
       span.t
         opacity: 0
-        transition: opacity .3s ease-in-out
+        transition-delay: 0
       span.th
         opacity: 1
-        transition: opacity .3s ease-in-out .15s
+        transition-delay: .15s
     span.t
-      transition: opacity .3s ease-in-out .15s
+      transition-delay: .15s
     span.h
       absolute: left 0 top 0
       opacity: 0
-      transition: opacity .3s ease-in-out
+      transition-delay: 0
+    span
+      transition: opacity .3s ease-out
   .input-wrapper
     width: 320px;
     max-width: 100%;
