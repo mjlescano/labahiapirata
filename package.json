@@ -19,7 +19,8 @@
     "jade": "~1.3.0",
     "joi": "^4.6.1",
     "nib": "^1.0.3",
+    "prettysize": "0.0.3",
     "stylus": "^0.42.3",
-    "tortuga": "^0.1.1"
+    "tortuga": "git://github.com/mjlescano/tortuga.git"
   }
 }
