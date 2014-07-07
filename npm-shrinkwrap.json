@@ -457,7 +457,7 @@
     "tortuga": {
       "version": "0.1.1",
       "from": "git://github.com/mjlescano/tortuga.git",
-      "resolved": "git://github.com/mjlescano/tortuga.git#1cc9ed74ff9bca1a2cad879fb80ac00f1b1ed297",
+      "resolved": "git://github.com/mjlescano/tortuga.git#88bd85a3c0d4c44d76ac05fbac9164e559e25439",
       "dependencies": {
         "request": {
           "version": "2.36.0",
