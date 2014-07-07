@@ -14,7 +14,8 @@ app.set('view engine', 'jade')
 app.set('trust proxy', true)
 
 if( onProduction ){
-  app.use(require('compression'))
+  var compression = require('compression')
+  app.use(compression())
 }
 
 if( onDevelopment ){
