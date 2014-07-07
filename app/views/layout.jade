@@ -12,7 +12,7 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
         h1
           span.t La Bahía Pirata
           span.h |
-          span.h.th The Pirate Bay Proxy
+          span(style='opacity:0').h.th The Pirate Bay Proxy
       form(action='/search', onsubmit='if( !this.elements.query.value ) { location = \'/\'; return false }')
         .input-wrapper
           input(id='search-query', type='text', name='query', value=locals.query, title='Búsqueda Pirata', autofocus=true)
