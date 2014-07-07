@@ -20,5 +20,6 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
     block content
     block bottom
     include partials/google-analytics
-    link(rel='stylesheet', type='text/css', href='/css/app.css')
-    link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Josefin+Sans:400,700')
+    include partials/async-link
+    +asyncLink('/css/app.css')
+    +asyncLink('//fonts.googleapis.com/css?family=Josefin+Sans:400,700')

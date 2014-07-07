@@ -15,7 +15,11 @@ app.set('trust proxy', true)
 
 if( onProduction ){
   var compression = require('compression')
-  app.use(compression())
+  app.use(compression({
+    filter: function(req, res){
+      return /json|text|javascript|image\/svg\+xml|application\/x-font-ttf|application\/vnd\.ms-opentype|application\/vnd\.ms-fontobject/.test(res.getHeader('Content-Type'))
+    }
+  }))
 }
 
 if( onDevelopment ){
