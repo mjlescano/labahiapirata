@@ -29,7 +29,7 @@ if( onDevelopment ){
   app.use(express.static(path.join(__dirname, 'public')))
 
   require('./lib/render-defaults')(app, {
-    pretty: true
+    pretty: onDevelopment
   })
 }
 

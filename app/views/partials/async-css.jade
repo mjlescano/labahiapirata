@@ -1,6 +1,16 @@
 script.
-  function css(url, cb) {
-    var f = function() { var l = document.createElement('link');l.rel = 'stylesheet';l.href = url;l.onload = cb;
-      var h = document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l, h); }
-    var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if(raf){raf(f)}else{window.addEventListener('load', f)} }
+  ;(function(w,d){
+    var cs = [], ps = 0
+    function p(){ ps--
+      if(!ps) for(var i in cs){cs.shift()()}
+    }
+    var o=('onload' in d.createElement('link'))
+    w.css=function(u, c){
+      ps++;if(c)cs.push(c)
+      var f=function(){
+        var l=d.createElement('link');l.rel='stylesheet';l.href=u;l.onload=(o?p:c)
+        var h=d.getElementsByTagName('head')[0];h.parentNode.insertBefore(l, h) }
+      var r=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame
+      if(r){r(f)}else{window.addEventListener('load', f)}
+    }
+  })(window,document)
