@@ -9,8 +9,8 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
   body(class=bodyClass)
     block top
     style body{background-color:#F0EFED}header .h{opacity:0}
-    style body.loading{color:transparent!important}
-    script if('onload' in document.createElement('link'))document.body.className+=' loading'
+    style body.l{color:transparent!important} body.l header{opacity:0}
+    script if('onload' in document.createElement('link'))document.body.className+=' l'
     header
       label(for='search-query')
         h1
@@ -25,5 +25,5 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
     block bottom
     include partials/async-css
     script css('/css/app.css')
-    script css('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bloading\b/,"") })
+    script css('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bl\b/,"") })
     include partials/google-analytics

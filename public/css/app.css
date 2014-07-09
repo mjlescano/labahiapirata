@@ -99,6 +99,8 @@ header {
   position: relative;
   padding: 10px 12px;
   font-size: 25px;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 header h1 {
   position: relative;
