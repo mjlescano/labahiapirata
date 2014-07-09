@@ -19,9 +19,14 @@
     "express": "^4.4.5",
     "jade": "~1.3.0",
     "joi": "^4.6.1",
+    "lodash": "^2.4.1",
     "nib": "^1.0.3",
+    "pleeease": "^0.4.1",
     "prettysize": "0.0.3",
     "stylus": "^0.42.3",
     "tortuga": "git://github.com/mjlescano/tortuga.git"
+  },
+  "devDependencies": {
+    "express-debug": "^1.1.0"
   }
 }

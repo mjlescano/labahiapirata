@@ -6,20 +6,24 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     include partials/seo-tags
     block meta
-  body(class=(locals.bodyClass || ''))
+  body(class=bodyClass)
+    block top
+    style body{background-color:#F0EFED}header .h{opacity:0}
+    style body.loading{color:transparent!important}
+    script if('onload' in document.createElement('link'))document.body.className+=' loading'
     header
       label(for='search-query')
         h1
           span.t La Bahía Pirata
           span.h |
-          span(style='opacity:0').h.th The Pirate Bay Proxy
+          span.h.th The Pirate Bay Proxy
       form(action='/search', onsubmit='if( !this.elements.query.value ) { location = \'/\'; return false }')
         .input-wrapper
           input(id='search-query', type='text', name='query', value=locals.query, title='Búsqueda Pirata', autofocus=true)
         button(type='submit') Buscar
     block content
     block bottom
+    include partials/async-css
+    script css('/css/app.css')
+    script css('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bloading\b/,"") })
     include partials/google-analytics
-    include partials/async-link
-    +asyncLink('/css/app.css')
-    +asyncLink('//fonts.googleapis.com/css?family=Josefin+Sans:400,700')

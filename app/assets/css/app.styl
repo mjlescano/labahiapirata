@@ -1,6 +1,5 @@
-@import 'lib/dev-tools'
-
-global-reset()
+@require 'lib/dev-tools'
+@require 'lib/mini-reset'
 
 beige = #F0EFED
 marron = #89766C
@@ -9,8 +8,6 @@ negro = #444444
 rojo = #972D15
 
 ::selection
-  background: rojo
-::-moz-selection
   background: rojo
 
 *
@@ -31,25 +28,17 @@ body, html
 //       background-color: darken(cyan, 50%)
 
 body
-  font-family: 'Josefin Sans', serif
+  line-height: 1
+  font-family: 'Quattrocento', serif
+  color: #000
   background-color: beige
 
 input:focus, textarea:focus
   outline 0
   -moz-outline-style none
 
-::-webkit-input-placeholder
-  color marron
-:-moz-placeholder
-  color marron
-
-::-webkit-input-placeholder
-  text-indent: 0
-:-moz-placeholder
-  text-indent: 0
-::-moz-placeholder
-  text-indent: 0
-:-ms-input-placeholder
+::placeholder
+  color: marron
   text-indent: 0
 
 .input-wrapper

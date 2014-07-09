@@ -1,11 +1,10 @@
 extends ../layout
-block vars
+append vars
   - title = 'The Pirate Bay Proxy'
   - description = 'La Bahía Pirata es un sitio que sirve de proxy para descargar contenido de ThePirateBay.se. Encuentra exactamente el mismo contenido que en The Pirate Bay.'
-block meta
-  +seoTags({
-    url: 'http://labahiapirata.com',
-    title: title,
-    description: description
-  })
-block content
+
++seoTags({
+  url: 'http://labahiapirata.com',
+  title: title,
+  description: description
+})

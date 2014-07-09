@@ -1,8 +1,8 @@
 var dotenv = require('dotenv')
 dotenv.load()
 
-var onDevelopment = !!(process.env.NODE_ENV === 'development')
-var onProduction = !!(process.env.NODE_ENV === 'production')
+var onDevelopment = process.env.NODE_ENV === 'development'
+var onProduction = process.env.NODE_ENV === 'production'
 
 var path = require('path')
 var express = require('express')
@@ -23,12 +23,17 @@ if( onProduction ){
 }
 
 if( onDevelopment ){
-  var assets = require(path.join(__dirname, 'lib', 'assets'))
-  app.use(assets.css)
+  var assets = require('./lib/assets')
+  app.use(assets.stylToCss)
+  app.use(assets.cssPleeease)
   app.use(express.static(path.join(__dirname, 'public')))
+
+  require('./lib/render-defaults')(app, {
+    pretty: true
+  })
 }
 
-var controllers = require(path.join(__dirname, 'lib', 'controllers'))
+var controllers = require('./lib/controllers')
 
 app.get('/', controllers.home.index)
 app.get('/search', controllers.search.index)
