@@ -22,7 +22,6 @@ if( onProduction ){
   }))
 }
 
-if( onDevelopment ){
   var assets = require('./lib/assets')
   app.use(assets.stylToCss)
   app.use(assets.cssPleeease)
@@ -31,6 +30,7 @@ if( onDevelopment ){
   require('./lib/render-defaults')(app, {
     pretty: onDevelopment
   })
+if( onDevelopment ){
 }
 
 var controllers = require('./lib/controllers')
