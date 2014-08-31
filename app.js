@@ -17,23 +17,26 @@ if( onProduction ){
   var compression = require('compression')
   app.use(compression({
     filter: function(req, res){
-      return /json|text|javascript|image\/svg\+xml|application\/x-font-ttf|application\/vnd\.ms-opentype|application\/vnd\.ms-fontobject/.test(res.getHeader('Content-Type'))
+      console.log(res.getHeader('Content-Type'))
+      return /javascript/.test(res.getHeader('Content-Type'))
     }
   }))
 }
 
-if( onDevelopment ){
-  var assets = require('./lib/assets')
-  app.use(assets.stylToCss)
-  app.use(assets.cssPleeease)
-  app.use(express.static(path.join(__dirname, 'public')))
-
-  require('./lib/render-defaults')(app, {
-    pretty: onDevelopment
-  })
-}
-
+var assets = require('./lib/assets')
+var renderDefaults = require('./lib/render-defaults')
 var controllers = require('./lib/controllers')
+
+//   // assets.stylToCss()
+// if( onDevelopment ){
+//   renderDefaults.add({ pretty: true })
+
+//   app.use(renderDefaults)
+//   app.use(assets.stylToCss)
+//   app.use(assets.cssPleeease)
+//   app.use(express.static(path.join(__dirname, 'public')))
+// }
+
 
 app.get('/', controllers.home.index)
 app.get('/search', controllers.search.index)
