@@ -1,43 +1,8 @@
-var dotenv = require('dotenv')
-dotenv.load()
+var http = require('http');
 
-var onDevelopment = process.env.NODE_ENV === 'development'
-var onProduction = process.env.NODE_ENV === 'production'
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
 
-var path = require('path')
-var express = require('express')
-
-var app = express()
-
-app.set('views', path.join(__dirname, 'app', 'views'))
-app.set('view engine', 'jade')
-app.set('trust proxy', true)
-
-if( onProduction ){
-  var compression = require('compression')
-  app.use(compression({
-    filter: function(req, res){
-      console.log(res.getHeader('Content-Type'))
-      return /javascript/.test(res.getHeader('Content-Type'))
-    }
-  }))
-}
-
-
-var assets = require('./lib/assets')
-var renderDefaults = require('./lib/render-defaults')
-var controllers = require('./lib/controllers')
-
-if( onDevelopment ){
-  renderDefaults.add({ pretty: true })
-  app.use(renderDefaults)
-  app.use(assets.stylToCss)
-  app.use(assets.cssPleeease)
-  app.use(express.static(path.join(__dirname, 'public')))
-}
-
-
-app.get('/', controllers.home.index)
-app.get('/search', controllers.search.index)
-
-var server = app.listen(process.env.PORT)
+console.log('Server running at http://127.0.0.1:1337/');

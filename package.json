@@ -13,7 +13,9 @@
   },
   "author": "mjlescano",
   "license": "ISC",
-  "engine": "node 0.10.x",
+  "engines": {
+    "node": "0.10.x"
+  },
   "dependencies": {
     "compression": "^1.0.8",
     "dotenv": "^0.4.0",
