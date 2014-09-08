@@ -28,15 +28,13 @@ var assets = require('./lib/assets')
 var renderDefaults = require('./lib/render-defaults')
 var controllers = require('./lib/controllers')
 
-//   // assets.stylToCss()
-// if( onDevelopment ){
-//   renderDefaults.add({ pretty: true })
-
-//   app.use(renderDefaults)
-//   app.use(assets.stylToCss)
-//   app.use(assets.cssPleeease)
-//   app.use(express.static(path.join(__dirname, 'public')))
-// }
+if( onDevelopment ){
+  renderDefaults.add({ pretty: true })
+  app.use(renderDefaults)
+  app.use(assets.stylToCss)
+  app.use(assets.cssPleeease)
+  app.use(express.static(path.join(__dirname, 'public')))
+}
 
 
 app.get('/', controllers.home.index)
