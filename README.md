@@ -5,6 +5,9 @@ La Bahía Pirata
   * pm2 start config/pm2.development.json
   * pm2 start config/pm2.production.json
 
+* Deploy
+  * deploy production
+
 * SSH
   * ssh lbp@labahiapirata.com
 
