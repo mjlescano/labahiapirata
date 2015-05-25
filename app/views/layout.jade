@@ -24,7 +24,7 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
     block content
     block bottom
     include partials/async-css
-    script css('/css/app.css')
-    script css('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bl\b/,"") })
+    script loadCachedCss('/css/app.css')
+    script loadCachedCss('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bl\b/,"") })
     link
     include partials/google-analytics

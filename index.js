@@ -30,7 +30,7 @@ var controllers = require('./lib/controllers')
 if( onDevelopment ){
   renderDefaults.add({ pretty: true })
   app.use(renderDefaults)
-  app.use(assets.stylToCss)
+  app.use(assets.stylus)
   app.use(assets.cssPleeease)
   app.use(express.static(path.join(__dirname, 'public')))
 }
@@ -38,4 +38,6 @@ if( onDevelopment ){
 app.get('/', controllers.home.index)
 app.get('/search', controllers.search.index)
 
-var server = app.listen(process.env.PORT)
+app.listen(process.env.PORT, function(){
+  console.log('><')
+})

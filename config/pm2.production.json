@@ -1,4 +1,4 @@
 [{
   "name": "lbp",
-  "script": "app.js"
+  "script": "index.js"
 }]
