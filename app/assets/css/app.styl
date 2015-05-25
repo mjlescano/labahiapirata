@@ -13,7 +13,8 @@ rojo = #972D15
 *
   box-sizing: border-box
 
-body, html
+body,
+html
   size: 100%
 
 // html.guides
@@ -33,9 +34,10 @@ body
   color: #000
   background-color: beige
 
-input:focus, textarea:focus
-  outline 0
-  -moz-outline-style none
+input:focus,
+textarea:focus
+  outline: 0
+  -moz-outline-style: none
 
 ::placeholder
   color: marron
@@ -44,15 +46,17 @@ input:focus, textarea:focus
 .input-wrapper
   position: relative
   font-size: 1em
+
   &:before
     content: ''
     absolute: left 0 top .85em
     size: 100% 1px
     background-color: marronClaro
     z-index: -1
+
   input
     reset-box-model()
-    width: 100%;
+    width: 100%
     border: none
     font-family: inherit
     font-size: inherit
@@ -67,31 +71,39 @@ header
   padding: 10px 12px
   font-size: 25px
   transition: opacity .3s ease-in
+
   h1
     position: relative
     margin: 0 0 0.2em
     user-select: none
     cursor: default
+
     &:hover
       span.t
         opacity: 0
         transition-delay: 0
+
       span.th
         opacity: 1 !important
         transition-delay: .15s
+
     span.t
       transition-delay: .15s
+
     span.h
       absolute: left 0 top 0
       opacity: 0
       transition-delay: 0
+
     span
       transition: opacity .3s ease-out
+
   .input-wrapper
-    width: 320px;
-    max-width: 100%;
-    font-size: .72em;
+    width: 320px
+    max-width: 100%
+    font-size: .72em
+
   button
-    display: none;
+    display: none
 
 @require 'views/**/*'
