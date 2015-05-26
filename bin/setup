@@ -1,5 +1,3 @@
 #!/bin/bash
 
-npm install pm2 -g
-
-sudo ln -s $(./bin/config-get path)/current/config/nginx.config /etc/nginx/sites-enabled/$(./bin/config-get host)
+sudo ln -s $(./bin/config-get path)/current/config/nginx.conf /etc/nginx/sites-enabled/labahiapirata
