@@ -29,7 +29,7 @@
     "pleeease": "^3.2.6",
     "prettysize": "0.0.3",
     "stylus": "^0.42.3",
-    "tortuga": "git://github.com/mjlescano/tortuga.git"
+    "tortuga": "0.1.1"
   },
   "devDependencies": {
     "express-debug": "^1.1.0"
