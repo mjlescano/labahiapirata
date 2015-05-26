@@ -38,5 +38,5 @@ app.get('/', controllers.home.index)
 app.get('/search', controllers.search.index)
 
 app.listen(process.env.PORT, function(){
-  console.log('><')
+  console.log('> ' + process.env.PORT + ' <')
 })
