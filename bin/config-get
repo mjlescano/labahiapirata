@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG=../deploy.conf
+CONFIG=./deploy.conf
 ENV=production
 
 key=$1

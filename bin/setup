@@ -2,4 +2,4 @@
 
 npm install pm2 -g
 
-ln -s $(./bin/config-get path)/current/config/nginx.config /etc/nginx/sites-enabled/$(./bin/config-get host)
+sudo ln -s $(./bin/config-get path)/current/config/nginx.config /etc/nginx/sites-enabled/$(./bin/config-get host)
