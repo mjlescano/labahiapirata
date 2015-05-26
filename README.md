@@ -1,15 +1,15 @@
 La Bahía Pirata
 ===============
 
-* SERVER
-  * pm2 start config/pm2.development.json
-  * pm2 start config/pm2.production.json
+* Server
+  * `pm2 start config/pm2.development.json`
+  * `pm2 start config/pm2.production.json`
 
 * Deploy
-  * deploy production
+  * `deploy production`
 
 * SSH
-  * ssh lbp@labahiapirata.com
+  * `ssh lbp@labahiapirata.com`
 
-* NGINX
-  * sudo service nginx restart
+* Nginx
+  * `sudo service nginx restart`
