@@ -1,4 +1,5 @@
-require('dotenv').load()
+var dotenv = require('dotenv')
+dotenv.load()
 
 var env = require('./lib/env')
 
