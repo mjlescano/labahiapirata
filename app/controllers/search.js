@@ -1,7 +1,10 @@
-var tortuga = require('tortuga')
-var pretty = require('prettysize')
+import tortuga from 'tortuga'
+import pretty from 'prettysize'
+import Log from '../../lib/log'
 
-exports.index = function(req, res) {
+let log = new Log('search')
+
+export function index (req, res) {
   var query = req.query.query
 
   if( !query ) return res.redirect(301, '/')
@@ -14,6 +17,9 @@ exports.index = function(req, res) {
       torrent.size = pretty(torrent.bytes)
       return torrent
     })
+
+    log.debug(results)
+
     res.render('search/index', {
       results: results,
       query: query,

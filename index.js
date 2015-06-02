@@ -1,42 +1,34 @@
-var dotenv = require('dotenv')
-dotenv.load()
+import express from 'express'
+import config from './lib/config'
+import Log from './lib/log'
+import env from './lib/env'
+import assets from './lib/assets'
+import renderDefaults from './lib/render-defaults'
+import controllers from './app/controllers'
 
-var env = require('./lib/env')
-
-var path = require('path')
-var express = require('express')
-
+let log = new Log()
 var app = express()
 
-app.set('views', path.join(__dirname, 'app', 'views'))
+app.set('views', './app/views')
 app.set('view engine', 'jade')
 app.set('trust proxy', true)
 
+renderDefaults.add({ config: config })
+
 if (env.production) {
-  var compression = require('compression')
-  app.use(compression({
-    filter: function(req, res){
-      console.log(res.getHeader('Content-Type'))
-      return /javascript/.test(res.getHeader('Content-Type'))
-    }
-  }))
+  app.use(assets.compression)
 }
 
 if (env.development) {
-  var assets = require('./lib/assets')
-  var renderDefaults = require('./lib/render-defaults')
   renderDefaults.add({ pretty: true })
-  app.use(renderDefaults)
   app.use(assets.stylus)
   app.use(assets.cssPleeease)
-  app.use(express.static(path.join(__dirname, 'public')))
+  app.use(express.static('./public'))
 }
 
-var controllers = require('./lib/controllers')
+app.use(renderDefaults)
+app.use(controllers)
 
-app.get('/', controllers.home.index)
-app.get('/search', controllers.search.index)
-
-app.listen(process.env.PORT, function(){
-  console.log('> ' + process.env.PORT + ' <')
+app.listen(config.PORT, function(){
+  log.info(` · ${config.PORT} · `)
 })
