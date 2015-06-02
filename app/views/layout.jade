@@ -7,7 +7,7 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
     include partials/seo-tags
     block meta
     style body{background-color:#F0EFED}header .h{opacity:0}
-    style body.l{color:transparent!important} body.l header{opacity:0}
+    style body.l{color:transparent!important}body.l header{opacity:0}
   body(class=bodyClass)
     script if('onload' in document.createElement('link'))document.body.className+=' l'
     block top
@@ -24,7 +24,9 @@ html(lang='es', prefix='og: http://ogp.me/ns#')
     block content
     block bottom
     include partials/async-css
-    script loadCachedCss('/css/app.css')
-    script loadCachedCss('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bl\b/,"") })
+    //- script loadCachedCss('/css/app.css')
+    //- script loadCachedCss('//fonts.googleapis.com/css?family=Quattrocento:400,700', function(){ var b=document.body;b.className=b.className.replace(/\bl\b/,"") })
+    link(href='/css/app.css', rel='stylesheet', type='text/css')
     link(href='//fonts.googleapis.com/css?family=Quattrocento:400,700', rel='stylesheet', type='text/css')
+    script var b=document.body;b.className=b.className.replace(/\bl\b/,"")
     include partials/google-analytics

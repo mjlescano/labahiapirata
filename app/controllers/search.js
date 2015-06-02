@@ -18,8 +18,6 @@ export function index (req, res) {
       return torrent
     })
 
-    log.debug(results)
-
     res.render('search/index', {
       results: results,
       query: query,

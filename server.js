@@ -15,7 +15,11 @@ app.set('views', './app/views')
 app.set('view engine', 'jade')
 app.set('trust proxy', true)
 
-renderDefaults.add({ config: config })
+renderDefaults.add({
+  config: config,
+  env: env
+})
+
 if (env.production) {
   log.debug('Loading production environment.')
   app.use(assets.compression)

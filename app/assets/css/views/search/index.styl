@@ -1,18 +1,32 @@
 .results-table
   padding: 20px 7px 5px
   width: 100%
-  th, td
+
+  th,
+  td
     padding: 5px
+
   th
     font-weight: bold
+
   td
     padding-top: 10px
-    border-bottom: 1px solid marronClaro
     line-height: 1.2
+
   tbody
     tr
       &:hover
         background-color: marronClaro
+
+  .link
+    a
+      color: rojo
+      text-decoration: none
+      transition: color .3s
+
+      &:hover
+        color: rojoOscuro
+
   .size
     color: marron
     font-size: .8em
@@ -22,9 +36,11 @@
   @media (max-width: 767px)
     width: 100%
     overflow: hidden
+
     thead
       position: absolute
       right: 100%
+
     td
       display: block
       word-break: break-all

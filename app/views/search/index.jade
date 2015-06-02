@@ -1,6 +1,8 @@
 extends ../layout
+
 append vars
   - title = locals.query || 'Resultados de Búsqueda'
+
 block content
   if results.length
     table.results-table
@@ -14,7 +16,7 @@ block content
       tbody
         each torrent in results
           tr
-            td
+            td.link
               a(href=torrent.magnet, title='Descargar') Link
             td.title= torrent.title
             td.size= (torrent.size || '')
