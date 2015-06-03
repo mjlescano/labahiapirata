@@ -9,7 +9,7 @@ import controllers from './app/controllers'
 let app = express()
 let log = new Log()
 
-log.info('La Bahía Pirata.')
+log.info('· La Bahía Pirata ·')
 
 app.set('views', './app/views')
 app.set('view engine', 'jade')

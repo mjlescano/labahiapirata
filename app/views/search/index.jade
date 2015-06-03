@@ -5,22 +5,15 @@ append vars
 
 block content
   if results.length
-    table.results-table
-      thead
-        tr
-          th
-          th Título
-          th
-          th Seeders
-          th Leechers
-      tbody
-        each torrent in results
-          tr
-            td.link
-              a(href=torrent.magnet, title='Descargar') Link
-            td.title= torrent.title
-            td.size= (torrent.size || '')
-            td= torrent.seeders
-            td= torrent.leechers
+    .results-table
+      table
+        tbody
+          each torrent in results
+            tr
+              td
+                a(href=torrent.magnet, title='Descargar') Link
+              td= torrent.title
+              td= torrent.size || ''
+              td #{torrent.seeders} · #{torrent.leechers}
   else
     h1 nada encontrado :(
