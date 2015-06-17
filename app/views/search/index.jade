@@ -4,7 +4,7 @@ append vars
   - title = locals.query || 'Resultados de Búsqueda'
 
 block content
-  if results.length
+  if results && results.length
     .results-table
       table
         tbody
@@ -12,7 +12,7 @@ block content
             tr
               td
                 a(href=torrent.magnet, title='Descargar') Link
-              td= torrent.title
+              td= torrent.name
               td= torrent.size || ''
               td #{torrent.seeders} · #{torrent.leechers}
   else
