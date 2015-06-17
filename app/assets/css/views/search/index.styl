@@ -45,10 +45,23 @@
   td:nth-child(2) // title
     width: auto
 
+    span
+      display: inline-block
+      color: marron
+      font-size: .8em
+      text-align: right
+      padding-left: 1em
+
+      & + span
+        padding-left: .5em
+
+        &:before
+          content: ' · '
+          padding-right: .3em
+
   td:nth-child(3) // size
     color: marron
     font-size: .8em
-    font-weight: bold
     text-align: right
 
   td:nth-child(4) // peers

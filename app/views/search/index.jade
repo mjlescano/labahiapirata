@@ -4,6 +4,8 @@ append vars
   - title = locals.query || 'Resultados de Búsqueda'
 
 block content
+  if env.development
+    script console.log(!{JSON.stringify(results)})
   if results && results.length
     .results-table
       table
@@ -12,8 +14,13 @@ block content
             tr
               td
                 a(href=torrent.magnetLink, title='Descargar') Link
-              td= torrent.name
+              td
+                = torrent.name
+                if torrent.category
+                  span= torrent.category.name
+                if torrent.subcategory
+                  span= torrent.subcategory.name
               td= torrent.size || ''
               td #{torrent.seeders} · #{torrent.leechers}
   else
-    h1 nada encontrado :(
+    h1 :(
