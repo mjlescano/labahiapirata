@@ -11,7 +11,7 @@ block content
           each torrent in results
             tr
               td
-                a(href=torrent.magnet, title='Descargar') Link
+                a(href=torrent.magnetLink, title='Descargar') Link
               td= torrent.name
               td= torrent.size || ''
               td #{torrent.seeders} · #{torrent.leechers}
