@@ -1,3 +1,6 @@
 #!/bin/bash
 
 sudo ln -s $(./bin/config-get path)/current/config/nginx.conf /etc/nginx/sites-enabled/labahiapirata
+
+## Install mon (logged in as root)
+(mkdir /tmp/mon && cd /tmp/mon && curl -L# https://github.com/visionmedia/mon/archive/master.tar.gz | tar zx --strip 1 && make install && rm -rf /tmp/mon)
