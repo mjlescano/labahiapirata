@@ -1,10 +1,10 @@
-import * as tpb from '../../lib/tpb'
-import Log from '../../lib/log'
+const tpb = require('../../lib/tpb')
+const Log = require('../../lib/log')
 
-let log = new Log('search')
+const log = new Log('search')
 
-export function index (req, res) {
-  var query = req.query.query
+module.exports.index = function index (req, res) {
+  const query = req.query.query
 
   if( !query ) return res.redirect(301, '/')
 

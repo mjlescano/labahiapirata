@@ -5,7 +5,7 @@ La Bahía Pirata
   * `npm run start-prod &`
 
 * Deploy
-  * `deploy production`
+  * `deploy prod`
 
 * SSH
   * `ssh lbp@labahiapirata.com`
