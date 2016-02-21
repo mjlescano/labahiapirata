@@ -2,8 +2,7 @@ La Bahía Pirata
 ===============
 
 * Server
-  * `pm2 start config/pm2.development.json`
-  * `pm2 start config/pm2.production.json`
+  * `npm run start-prod &`
 
 * Deploy
   * `deploy production`
