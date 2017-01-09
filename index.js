@@ -1,5 +1,4 @@
 var express = require('express')
-var config = require('./lib/config')
 var Log = require('./lib/log')
 var env = require('./lib/env')
 var assets = require('./lib/assets')
@@ -16,7 +15,6 @@ app.set('view engine', 'jade')
 app.set('trust proxy', true)
 
 renderDefaults.add({
-  config: config,
   env: env
 })
 
@@ -30,12 +28,13 @@ if (env.development) {
   renderDefaults.add({ pretty: true })
   app.use(assets.stylus)
   app.use(assets.cssPleeease)
-  app.use(express.static('./public'))
 }
+
+app.use(express.static('./public'))
 
 app.use(renderDefaults)
 app.use(controllers)
 
-app.listen(config.PORT, function(){
-  log.info(`· ${config.PORT} ·`)
+app.listen(process.env.PORT, function(){
+  log.info(`· ${process.env.PORT} ·`)
 })
