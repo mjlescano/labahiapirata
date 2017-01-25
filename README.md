@@ -1,6 +1,8 @@
 La Bahía Pirata
 ===============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mjlescano/labahiapirata.svg)](https://greenkeeper.io/)
+
 * Server
   * `npm run start-prod &`
 
