@@ -13,3 +13,8 @@ patch:
         patched: '2017-02-01T13:21:46.390Z'
     - pleeease > postcss-url > directory-encoder > handlebars > uglify-js:
         patched: '2017-02-01T13:21:46.390Z'
+  'npm:uglify-js:20150824':
+    - jade > transformers > uglify-js:
+        patched: '2017-02-15T17:35:04.322Z'
+    - pleeease > postcss-url > directory-encoder > handlebars > uglify-js:
+        patched: '2017-02-15T17:35:04.322Z'
