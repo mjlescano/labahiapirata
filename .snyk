@@ -18,3 +18,6 @@ patch:
         patched: '2017-02-15T17:35:04.322Z'
     - pleeease > postcss-url > directory-encoder > handlebars > uglify-js:
         patched: '2017-02-15T17:35:04.322Z'
+  'npm:ms:20170412':
+    - compression > debug > ms:
+        patched: '2017-05-24T00:57:13.851Z'
