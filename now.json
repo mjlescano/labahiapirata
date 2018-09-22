@@ -1,5 +1,6 @@
 {
   "name": "labahiapirata",
   "alias": "labahiapirata.com",
-  "type": "docker"
+  "type": "docker",
+  "public": false
 }
