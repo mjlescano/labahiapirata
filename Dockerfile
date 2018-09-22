@@ -6,8 +6,8 @@ COPY ["package.json", "package-lock.json", "/usr/src/"]
 
 ENV NODE_ENV=production \
     PORT=3000 \
-    LOG_LEVEL=error \
-    PIRATEBAY_HOST=https://www.skytorrents.lol/
+    LOG_LEVEL=info \
+    TORRENT_DOMAIN=https://www.skytorrents.lol/
 
 RUN npm i --loglevel=warn --progress=false --porcelain
 
