@@ -4,8 +4,8 @@ const html = require('nanohtml')
 const span = (text) => html`<span>${text}</span>`
 
 const renderResult = ({
-  magnetLink,
   name,
+  magnetLink,
   category,
   subcategory,
   size,

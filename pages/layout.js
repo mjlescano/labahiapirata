@@ -1,7 +1,7 @@
 const raw = require('nanohtml/raw')
 const html = require('nanohtml')
 
-module.exports = ({ title, content = '' } = {}) => html`
+module.exports = ({ title, query = '', content = '' } = {}) => html`
   <!DOCTYPE html>
   <html>
   <head>
@@ -21,7 +21,14 @@ module.exports = ({ title, content = '' } = {}) => html`
     </label>
     <form action="/search">
       <div class="input-wrapper">
-        <input id="search-query" type="text" name="query" title="Búsqueda Pirata" autofocus>
+        <input
+          id="search-query"
+          type="text"
+          name="query"
+          title="Búsqueda Pirata"
+          value="${query}"
+          autofocus
+        >
       </div>
       <button type="submit">Buscar</button>
     </form>

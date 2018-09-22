@@ -21,6 +21,7 @@ module.exports = async (ctx) => {
 
   ctx.body = renderLayout({
     title: query,
+    query,
     content
   })
 }
